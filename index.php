@@ -80,7 +80,7 @@
             <script>
                 $("#loginForm").show();
                 $("#switchForm").hide();
-                $("#messegehead").html("Regestration successfull, please login")..css("color", "green");;
+                $("#messegehead").html("Regestration successfull, please login").css("color", "green");;
             </script>
             <?php
         }
@@ -99,14 +99,58 @@
                 $("#switchForm > p").html("Already member? Login now!");
                 $("#messegehead").html('Username already exists, choose a different username').css("color", "red");
             </script>
-            <?php            
-        }else if($status == 409){
+            <?php                 
+        }else{
             ?>
             <script>
                 $("#loginForm").hide();
                 $("#signupForm").show();
                 $("#passwordValidation").css("color", "black");
                 $("#switchForm > p").html("Already member? Login now!");
+                $("#messegehead").html('Internal Server Error, Please try again after some times').css("color", "red");
+            </script>
+            <?php            
+        }
+    }
+    if (isset($_GET['login'])) {
+        $messege = $_GET['messege'];
+        $success = $_GET['success'];
+        $status = $_GET['status'];
+        if ($success==true) {
+                //TODO: Do something?
+        }
+        else if($status == 400){
+            ?>
+            <script>
+                $("#loginForm").show();
+                $("#signupForm").hide();
+                $("#messegehead").html("All fields are required").css("color", "red");
+                </script>
+            <?php            
+        }else if($status == 401){
+            ?>
+            <script>
+                // $("#loginForm").show();
+                // $("#signupForm").hide();
+                $("#switchForm > p").html("Not yet a member? Register now!");
+                $("#messegehead").html('Invalid Credentials').css("color", "red");
+            </script>
+            <?php            
+        }else if($status == 404){
+            ?>
+            <script>
+                // $("#loginForm").show();
+                // $("#signupForm").hide();
+                $("#switchForm > p").html("Not yet a member? Register now!");
+                $("#messegehead").html('User Not Found').css("color", "red");
+            </script>
+            <?php            
+        }else{
+            ?>
+            <script>
+                $("#loginForm").show();
+                $("#signupForm").hide();
+                $("#switchForm > p").html("Not yet a member? Register now!");
                 $("#messegehead").html('Internal Server Error, Please try again after some times').css("color", "red");
             </script>
             <?php            
