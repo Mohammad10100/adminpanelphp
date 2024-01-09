@@ -100,6 +100,16 @@
                 $("#messegehead").html('Username already exists, choose a different username').css("color", "red");
             </script>
             <?php            
+        }else if($status == 409){
+            ?>
+            <script>
+                $("#loginForm").hide();
+                $("#signupForm").show();
+                $("#passwordValidation").css("color", "black");
+                $("#switchForm > p").html("Already member? Login now!");
+                $("#messegehead").html('Internal Server Error, Please try again after some times').css("color", "red");
+            </script>
+            <?php            
         }
     }
     ?>

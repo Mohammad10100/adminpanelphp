@@ -85,6 +85,18 @@
         exit();
     } else {
         echo 'Error: ' . $sql . '<br>' . $conn->error;
+        $response = array(
+            'success' => false,
+            'status' => 500,
+            'signup' => true,
+            'messege' => 'Internal Server Error',
+        );
+
+        // Convert the data to a query string
+        $queryString = http_build_query($response);
+        // redirect to login
+        header("Location: ../index.php?$queryString");
+        exit();
     }
     
     echo "done";
