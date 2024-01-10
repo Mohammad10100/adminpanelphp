@@ -12,40 +12,43 @@ body {
 
 #switchForm{
     display: flex;
+    font-size: 12px;
+    margin-bottom: 2rem;
 }
 
 form {
-    background-color: #ffffff;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 300px;
     text-align: center;
+    padding: 0px 20px;
 }
 
 .forms {
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 input {
     width: 100%;
     padding: 10px;
     margin: 8px 0;
     box-sizing: border-box;
+    outline: none;
 }
 
 button {
-    background-color: #4caf50;
+    background-color: #090963;
     color: white;
     padding: 10px 15px;
+    width: 100%;
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #000031;
 }
 
 .container{
@@ -63,3 +66,102 @@ li{
     display: flex;
     align-items: start;
 }
+
+
+.bg, .center{
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+}
+.left, .right{
+    min-height: 100%;
+    min-width: 50%;
+    display: flex;
+}
+.center{
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.foreground{
+    display: flex;
+    height: 80vh;
+    width: 85vw;
+    margin: 1rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.left{
+    background-color: #CEE3FF;
+}
+.right{
+    background-color: #1E1F71;
+}
+.fg_left{
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.fg_right{
+    background-color: #E6F2FF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#messegehead{
+    margin: 2rem;
+    margin-bottom: 0;
+}
+
+#foregroundimg{
+    height: 50%;
+    width: 80%;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .fg_right {
+        display: none;
+        width: 100%;
+    }
+    img{
+        display: none;
+    }
+    .fg_left{
+        border-radius: 1rem;
+        width: 80%;
+    }
+    form{
+        width: 90%;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 800px) {
+    .fg_right {
+        display: flex;
+        width: 20vw;
+    }
+    img{
+        display: flex;
+        size: 4rem;
+    }
+    .fg_left{
+        border: none;
+        width: 80vw;
+    }
+    .forms{
+        width: 90%;
+    }
+  }

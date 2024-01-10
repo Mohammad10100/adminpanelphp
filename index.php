@@ -11,46 +11,57 @@
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <body>
-
-    <a id="switchForm" href="#">
-        <p>Not yet a member? Register now!</p>
-    </a>
-    <p id="messegehead"></p>
-    <div class="forms">
-    <form id="signupForm" action="./auth/signup.php" method="POST" style="display:none">
-        <h2>Sign Up</h2>
-        <label for="signupUsername">Username:</label>
-        <input type="text" name="username" required>
-
-        <label for="signupPassword">Password:</label>
-        <input type="password" name="password" required>
-
-        <p id="messegebottom"></p>
-
-        <span class="passwordValidation" style="margin:'0px'; font-size: 0.9rem;" >Ensure your password meets the following criteria:</span>
-        <div class="container">
-            <ul>
-                <li>At least 8 characters long</li>
-                <li>Contains at least one uppercase letter</li>
-                <li>Contains at least one lowercase letter</li>
-                <li>Includes at least one numerical digit</li>
-                <li>Includes at least one special character</li>
-            </ul>   
+    
+    <div class="container">
+        <div class="bg">
+            <span class="left "></span>
+            <span class="right "></span>
         </div>
+        <div class="center">
+            <div class="foreground">
+                <span class="left fg_left">
+                    <p id="messegehead"></p>
+                    <div class="forms">
+                    <form id="signupForm" action="./auth/signup.php" method="POST" style="display:none">
+                        <h2>Sign Up</h2>
+                        <input type="text" name="username" placeholder="Enter Username" required>
 
-        <button type="submit">Sign Up</button>
-    </form>
+                        <input type="password" name="password" placeholder="Enter Password" required>
 
-    <form id="loginForm" action="./auth/login.php" method="POST">
-        <h2>Login</h2>
-        <label for="loginUsername">Username:</label>
-        <input type="text"  name="username" required>
+                        <p id="messegebottom"></p>
 
-        <label for="loginPassword">Password:</label>
-        <input type="password" name="password" required>
+                        <span class="passwordValidation" style="margin:'0px'; font-size: 0.9rem;" >Ensure your password meets the following criteria:</span>
+                        <div class="container">
+                            <ul>
+                                <li>At least 8 characters long</li>
+                                <li>Contains at least one uppercase letter</li>
+                                <li>Contains at least one lowercase letter</li>
+                                <li>Includes at least one numerical digit</li>
+                                <li>Includes at least one special character</li>
+                            </ul>   
+                        </div>
 
-        <button type="submit">Login</button>
-    </form>
+                        <button type="submit">Sign Up</button>
+                    </form>
+
+                    <form id="loginForm" action="./auth/login.php" method="POST">
+                        <h2>Login</h2>
+                        <input type="text"  name="username" placeholder="Your Username" required>
+
+                        <input type="password" name="password" placeholder="Your Password" required>
+
+                        <button type="submit">Login</button>
+                    </form>
+                    </div>
+                    <a id="switchForm" href="#">
+                    <p>Don't have an account yet? <span>Sign Up!</span></p>
+                    </a>
+                </span>
+                <span class="right fg_right">
+                    <img id="foregroundimg" src="./images/foregroundimg.png" alt="">
+                </span>
+            </div>
+        </div>
     </div>
 
 </body>
