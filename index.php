@@ -19,7 +19,8 @@
         </div>
         <div class="center">
             <div class="foreground">
-                <span class="left fg_left">
+                <span class="fg_left">
+                    <img id="headerimage" src="./images/foregroundimg.png">
                     <div class="forms">
                     <form id="signupForm" action="./auth/signup.php" method="POST" style="display:none">
                         <p class="messegehead"></p>
@@ -58,7 +59,7 @@
                     <p>Don't have an account yet? <span>Sign Up!</span></p>
                     </a>
                 </span>
-                <span class="right fg_right">
+                <span class="fg_right">
                     <img id="foregroundimg" src="./images/foregroundimg.png" alt="">
                 </span>
             </div>
