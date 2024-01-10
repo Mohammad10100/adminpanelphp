@@ -27,6 +27,7 @@ form {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 
 }
 input {
@@ -119,14 +120,22 @@ li{
     justify-content: center;
 }
 
-#messegehead{
-    margin: 2rem;
+.messegehead{
+    display: none;
+    margin-top: 2rem;
     margin-bottom: 0;
+    border: 1px solid red;
+    border-radius: 0.2rem;
+    padding: 1rem;
+    font-size: 0.8rem;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: justify;
 }
 
 #foregroundimg{
-    height: 50%;
-    width: 80%;
+    /* height: 50%;
+    width: 80%; */
 }
 
 
@@ -134,9 +143,8 @@ li{
 @media only screen and (max-width: 600px) {
     .fg_right {
         display: none;
-        width: 100%;
     }
-    img{
+    #foregroundimg{
         display: none;
     }
     .fg_left{
@@ -153,15 +161,16 @@ li{
         display: flex;
         width: 20vw;
     }
-    img{
-        display: flex;
-        size: 4rem;
+    #foregroundimg{
+        width: 120%;
+        /* height: 50%; */
     }
     .fg_left{
         border: none;
-        width: 80vw;
+        width: 40%;
+        padding: 0.5rem;
     }
-    .forms{
+    form{
         width: 90%;
     }
   }

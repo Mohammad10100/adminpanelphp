@@ -20,9 +20,9 @@
         <div class="center">
             <div class="foreground">
                 <span class="left fg_left">
-                    <p id="messegehead"></p>
                     <div class="forms">
                     <form id="signupForm" action="./auth/signup.php" method="POST" style="display:none">
+                        <p class="messegehead"></p>
                         <h2>Sign Up</h2>
                         <input type="text" name="username" placeholder="Enter Username" required>
 
@@ -45,6 +45,7 @@
                     </form>
 
                     <form id="loginForm" action="./auth/login.php" method="POST">
+                        <p class="messegehead"></p>
                         <h2>Login</h2>
                         <input type="text"  name="username" placeholder="Your Username" required>
 
@@ -72,11 +73,12 @@
         if(isLoginVisible) {
           $("#loginForm").hide();
           $("#signupForm").show();
+          $(".messegehead").hide();
           $("#switchForm > p").html("Already member? Login now!");
         } else {
           $("#loginForm").show();
           $("#signupForm").hide();
-          $("#messegehead").hide();
+          $(".messegehead").hide();
           $("#switchForm > p").html("Not yet a member? Register now!");
         }
       })
@@ -91,13 +93,20 @@
             <script>
                 $("#loginForm").show();
                 $("#switchForm").hide();
-                $("#messegehead").html("Regestration successfull, please login").css("color", "green");;
-            </script>
+                $(".messegehead").show();
+                $(".messegehead").html("Regestration successfull, please login").css("color", "green");;
+                </script>
             <?php
         }
         else if($status == 403){
             ?>
             <script>
+                $("#loginForm").hide();
+                $("#signupForm").show();
+                // $("#switchForm").show();
+                $("#switchForm > p").html("Already member? Login now!");
+                $(".messegehead").show();
+                $(".messegehead").html("password must contain all the required character.").css("color", "red");;
                 $("#passwordValidation").css("color", "red");
                 </script>
             <?php            
@@ -108,7 +117,8 @@
                 $("#signupForm").show();
                 $("#passwordValidation").css("color", "black");
                 $("#switchForm > p").html("Already member? Login now!");
-                $("#messegehead").html('Username already exists, choose a different username').css("color", "red");
+                $(".messegehead").show();
+                $(".messegehead").html('Username already exists, choose a different username').css("color", "red");
             </script>
             <?php                 
         }else{
@@ -118,7 +128,8 @@
                 $("#signupForm").show();
                 $("#passwordValidation").css("color", "black");
                 $("#switchForm > p").html("Already member? Login now!");
-                $("#messegehead").html('Internal Server Error, Please try again after some times').css("color", "red");
+                $(".messegehead").show();
+                $(".messegehead").html('Internal Server Error, Please try again after some times').css("color", "red");
             </script>
             <?php            
         }
@@ -135,7 +146,8 @@
             <script>
                 $("#loginForm").show();
                 $("#signupForm").hide();
-                $("#messegehead").html("All fields are required").css("color", "red");
+                $(".messegehead").show();
+                $(".messegehead").html("All fields are required").css("color", "red");
                 </script>
             <?php            
         }else if($status == 401){
@@ -144,7 +156,8 @@
                 // $("#loginForm").show();
                 // $("#signupForm").hide();
                 $("#switchForm > p").html("Not yet a member? Register now!");
-                $("#messegehead").html('Invalid Credentials').css("color", "red");
+                $(".messegehead").show();
+                $(".messegehead").html('Invalid Credentials').css("color", "red");
             </script>
             <?php            
         }else if($status == 404){
@@ -153,7 +166,8 @@
                 // $("#loginForm").show();
                 // $("#signupForm").hide();
                 $("#switchForm > p").html("Not yet a member? Register now!");
-                $("#messegehead").html('User Not Found').css("color", "red");
+                $(".messegehead").show();
+                $(".messegehead").html('User Not Found').css("color", "red");
             </script>
             <?php            
         }else{
@@ -162,7 +176,8 @@
                 $("#loginForm").show();
                 $("#signupForm").hide();
                 $("#switchForm > p").html("Not yet a member? Register now!");
-                $("#messegehead").html('Internal Server Error, Please try again after some times').css("color", "red");
+                $(".messegehead").show();
+                $(".messegehead").html('Internal Server Error, Please try again after some times').css("color", "red");
             </script>
             <?php            
         }
